@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+  background-color: white;
+}
+
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+  background-color: white;
+}
+
+.onecolumn {   
+  float: left;
+  width: 90%;
+}
+
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+
+
+    <script type="text/javascript"> 
+        function displayanswer(question){ 
+            if (question == 1){
+                document.getElementById('a1').innerHTML = 'CANDLE';
+            }
+            if (question == 2){
+                document.getElementById('a2').innerHTML = 'RACE';
+            }
+            if (question == 3){
+                document.getElementById('a3').innerHTML = 'SCHOOL';
+            }
+            if (question == 4){
+                document.getElementById('a4').innerHTML = 'RUMOR';
+            }
+            if (question == 5){
+                document.getElementById('a5').innerHTML = 'WOOL';
+            }
+            if (question == 6){
+                document.getElementById('a6').innerHTML = 'TIGER';
+            }
+            if (question == 7){
+                document.getElementById('a7').innerHTML = 'SCORE';
+            }
+            if (question == 8){
+                document.getElementById('a8').innerHTML = 'YEAR';
+            }
+            if (question == 9){
+                document.getElementById('a9').innerHTML = 'SAME';
+            }
+            if (question == 10){
+                document.getElementById('a10').innerHTML = 'STUDY';
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+
+<style>
+/* Header/Blog Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+.header a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+
+<div class="header">
+    <h1><a href="./index.html">Tony Terrasa</a></h1>
+</div>
+
+<div class="topnav">
+    <a href="./reviews.html">Reviews</a>
+    <a href="./games.html">Games</a>
+</div>
+
+
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 1</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            
+        <ol>
+            <li><strong>L D E A C N - </strong> A cylinder of wax used for light
+                <button onclick="displayanswer(1)"><p>Show Answer</p></button><p id="a1"></p>
+            <li><strong>C E A R  - </strong> A competition between runners, horses, vehicles, etc
+                <button onclick="displayanswer(2)"><p>Show Answer</p></button><p id="a2"></p>
+            <li><strong>C O L O S H  - </strong> An institution for educating children.
+                <button onclick="displayanswer(3)"><p>Show Answer</p></button><p id="a3"></p>
+            <li><strong>U M R O  - </strong> a currently circulating story or report of uncertain or doubtful truth.
+                <button onclick="displayanswer(4)"><p>Show Answer</p></button><p id="a4"></p>
+            <li><strong>O W O L  - </strong> he fine, soft curly or wavy hair forming the coat of a sheep
+                <button onclick="displayanswer(5)"><p>Show Answer</p></button><p id="a5"></p>
+            <li><strong>E R I T G  - </strong> a very large solitary cat with a yellow-brown coat striped with black
+                <button onclick="displayanswer(6)"><p>Show Answer</p></button><p id="a6"></p>
+            <li><strong>E R C S O  - </strong> the number of points, goals, runs, etc., that each player or team has in a game or contest.
+                <button onclick="displayanswer(7)"><p>Show Answer</p></button><p id="a7"></p>
+            <li><strong>E R A Y  - </strong> usually 365 days
+                <button onclick="displayanswer(8)"><p>Show Answer</p></button><p id="a8"></p>
+            <li><strong>S M A E  - </strong> the opposite of “different”
+                <button onclick="displayanswer(9)"><p>Show Answer</p></button><p id="a9"></p>
+            <li><strong>S Y U D T  - </strong>to spend time gaining knowledge of an academic subject, typically at school
+                <button onclick="displayanswer(10)"><p>Show Answer</p></button><p id="a10"></p>
+        </li>
+        </ol>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+<div class="footer">
+  <p>Last updated 2023-03-29</p>
+</div>
+
+
+</body>
+</html>
+
+
