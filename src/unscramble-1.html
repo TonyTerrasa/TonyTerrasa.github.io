@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "_base.html" %}
 
+{% block head_content %}
 <script type="text/javascript"> 
     const answers = [
         'CANDLE', 
@@ -59,23 +58,9 @@
         }
     }
 </script>
+{% endblock head_content %}
 
-
-<link rel="stylesheet" href="styles.css">
-
-</head>
-<body>
-
-<div class="header">
-    <h1><a href="./index.html">Tony Terrasa</a></h1>
-</div>
-
-<div class="topnav">
-    <a href="./reviews.html">Reviews</a>
-    <a href="./games.html">Games</a>
-</div>
-
-
+{% block content %}
 
 <div class="row">
     <div class="onecolumn">
@@ -119,23 +104,4 @@
     toggleAll();
     toggleAll();
 </script>
-
-
-<style>
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
-</style>
-<div class="footer">
-  <p>Last updated 2023-04-09</p>
-</div>
-
-
-</body>
-</html>
-
-
+{% endblock content %}

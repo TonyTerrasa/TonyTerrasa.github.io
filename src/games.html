@@ -5,26 +5,52 @@
     <div class="onecolumn">
         <div class="card">
             <div class="row">
-                <div class="leftcolumn">
-                    <h2>Spelling Bee</h2>
-                    <p>A word game where you have to find as many words as you can given a set of letters. Based off of the NYT Spelling Bee. Good for warm-ups.</p>
-                </div>
-                <div class="rightcolumn">
+                <div class="leftcolumn" style="width: 20%">
                     <a href="spelling-bee-1.html"><img src='media/spelling-bee-1.png' alt="Spelling Bee Sample" width=100%></a>
                 </div>
+                <div class="rightcolumn" style="width: 70%">
+                    <h2>Spelling Bee</h2>
+                    <p>A word game where you have to find as many words as you can given a set of letters. Based off of the NYT Spelling Bee. Good for warm-ups.</p>
+                        <a href="https://docs.google.com/presentation/d/1VxDbTYCmjY3ljMQsNUC97aQAnn42JoAuuLhFOTOm-Nw/copy">Spelling Bee Template</a> <br>
+                        <a href="spelling-bee-1.html">Spelling Bee 1</a> <br>
+                        <a href="spelling-bee-2.html">Spelling Bee 2</a> <br>
+                </div>
             </div>
+        </div>
+        <div class="card">
             <div class="row">
-                <div class="leftcolumn">
+                <div class="leftcolumn" style="width: 20%">
+                    <a href="unscramble-1.html"><img src='media/scramble.png' alt="Spelling Bee Sample" width=100%></a>
+                </div>
+                <div class="rightcolumn" style="width: 70%">
                     <h2>Unscramble</h2>
                     <p>Unscramble these words based on the definition.</p>
+                    <a href="unscramble-1.html">Unscramble 1</a>
+                    <a href="unscramble-2.html">Unscramble 2</a>
                 </div>
                 <div class="rightcolumn">
-                    <a href="scramble-1.html"><img src='media/scramble.png' alt="Scramble Example" width=100%></a>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 {% endblock content %}

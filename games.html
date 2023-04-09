@@ -1,122 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  padding: 10px;
-  background: #f1f1f1;
-}
-
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 75%;
-  background-color: white;
-}
-
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  padding-left: 20px;
-  background-color: white;
-}
-
-.onecolumn {   
-  float: left;
-  width: 90%;
-}
-
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
 
 
 
 
+<link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-
-<style>
-/* Header/Blog Title */
-.header {
-  padding: 10px;
-  text-align: center;
-  background: white;
-}
-
-.header h1 {
-  font-size: 50px;
-}
-.header a {
-  display: block;
-  color: #333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-</style>
 
 <div class="header">
     <h1><a href="./index.html">Tony Terrasa</a></h1>
@@ -132,27 +24,53 @@ body {
     <div class="onecolumn">
         <div class="card">
             <div class="row">
-                <div class="leftcolumn">
-                    <h2>Spelling Bee</h2>
-                    <p>A word game where you have to find as many words as you can given a set of letters. Based off of the NYT Spelling Bee. Good for warm-ups.</p>
-                </div>
-                <div class="rightcolumn">
+                <div class="leftcolumn" style="width: 20%">
                     <a href="spelling-bee-1.html"><img src='media/spelling-bee-1.png' alt="Spelling Bee Sample" width=100%></a>
                 </div>
+                <div class="rightcolumn" style="width: 70%">
+                    <h2>Spelling Bee</h2>
+                    <p>A word game where you have to find as many words as you can given a set of letters. Based off of the NYT Spelling Bee. Good for warm-ups.</p>
+                        <a href="https://docs.google.com/presentation/d/1VxDbTYCmjY3ljMQsNUC97aQAnn42JoAuuLhFOTOm-Nw/copy">Spelling Bee Template</a> <br>
+                        <a href="spelling-bee-1.html">Spelling Bee 1</a> <br>
+                        <a href="spelling-bee-2.html">Spelling Bee 2</a> <br>
+                </div>
             </div>
+        </div>
+        <div class="card">
             <div class="row">
-                <div class="leftcolumn">
+                <div class="leftcolumn" style="width: 20%">
+                    <a href="unscramble-1.html"><img src='media/scramble.png' alt="Spelling Bee Sample" width=100%></a>
+                </div>
+                <div class="rightcolumn" style="width: 70%">
                     <h2>Unscramble</h2>
                     <p>Unscramble these words based on the definition.</p>
+                    <a href="unscramble-1.html">Unscramble 1</a>
+                    <a href="unscramble-2.html">Unscramble 2</a>
                 </div>
                 <div class="rightcolumn">
-                    <a href="scramble-1.html"><img src='media/scramble.png' alt="Scramble Example" width=100%></a>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 
 
@@ -166,7 +84,7 @@ body {
 }
 </style>
 <div class="footer">
-  <p>Last updated 2023-03-30</p>
+  <p>Last updated 2023-04-09</p>
 </div>
 
 
