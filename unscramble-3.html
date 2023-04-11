@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Unscramble 3</title>
+
+<script type="text/javascript"> 
+    const answers = [
+        'IMAGINATION', 
+        'COURAGE', 
+        'JOURNEY', 
+        'FUNNY', 
+        'FUN',
+        'COMFORTABLE',
+        'DETERMINED',
+        'NERVOUS',
+        'EAGER',
+        'GENUINE',
+
+    ];
+</script>
+<script type="text/javascript" src="answers.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div class="header">
+    <h1><a href="./index.html">Tony Terrasa</a></h1>
+</div>
+
+<div class="topnav">
+    <a href="./reviews.html">Reviews</a>
+    <a href="./games.html">Games</a>
+</div>
+
+
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 3</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
+            
+        <ol>
+            <li><strong>G I M N T A N I O A I - </strong> the ability to create mental images, ideas, or concepts
+                <button onclick="displayanswer(1)" id="b1"><p>Show Answer</p></button><p id="a1"></p>
+            <li><strong>C G A R U O E - </strong> the ability to do something that frightens you
+                <button onclick="displayanswer(2)" id="b2"><p>Show Answer</p></button><p id="a2"></p>
+            <li><strong>U O J N Y R E  - </strong> a trip from one place to another, often involving a long distance
+                <button onclick="displayanswer(3)" id="b3"><p>Show Answer</p></button><p id="a3"></p>
+            <li><strong>U N Y F N - </strong> makes you laugh
+                <button onclick="displayanswer(4)" id="b4"><p>Show Answer</p></button><p id="a4"></p>
+            <li><strong>U N F - </strong> is something you enjoy
+                <button onclick="displayanswer(5)" id="b5"><p>Show Answer</p></button><p id="a5"></p>
+            <li><strong>F C O M R B E L A O T - </strong> providing physical ease and relaxation; cozy
+                <button onclick="displayanswer(6)" id="b6"><p>Show Answer</p></button><p id="a6"></p>
+            <li><strong>E D T R M N D E E I - </strong> having made a firm decision and not wanting to change it
+                <button onclick="displayanswer(7)" id="b7"><p>Show Answer</p></button><p id="a7"></p>
+            <li><strong>V N O E U S R  - </strong> anxious, scared
+                <button onclick="displayanswer(8)" id="b8"><p>Show Answer</p></button><p id="a8"></p>
+            <li><strong>G E E R A - </strong> strongly wanting to do or have something
+                <button onclick="displayanswer(9)" id="b9"><p>Show Answer</p></button><p id="a9"></p>
+            <li><strong>I E U E G N N - </strong> being what you say you are
+                <button onclick="displayanswer(10)" id="b10"><p>Show Answer</p></button><p id="a10"></p>
+        </li>
+        </ol>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    // deals with the fact that they show up strangely the first time
+    // needs to be done twice, so the answers end up hidden
+    toggleAll();
+    toggleAll();
+</script>
+
+
+<style>
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+<div class="footer">
+  <p>Last updated 2023-04-11</p>
+</div>
+
+
+</body>
+</html>
+
+
