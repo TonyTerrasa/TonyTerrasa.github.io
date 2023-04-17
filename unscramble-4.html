@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.7.45">
+  
+<title>Unscramble 4</title>
+
+<script type="text/javascript"> 
+    const answers = [
+        'PASS', 
+        'FAIL', 
+        'TINY', 
+        'ENORMOUS', 
+        'RUBBISH',
+        'GRAVE',
+        'STREET',
+        'MOUNTAIN',
+        'CLOTHING',
+        'UNIVERSITY',
+
+    ];
+</script>
+<script type="text/javascript" src="answers.js"></script>
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <div class="header">
+    <h1><a href="./index.html">Tony Terrasa</a></h1>
+</div>
+
+<div class="topnav">
+    <a href="./reviews.html">Reviews</a>
+    <a href="./games.html">Games</a>
+</div> 
+
+  
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 4</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
+            
+        <ol>
+            <li><strong>P S S A - </strong> the opposite of failing a class/test/exam
+                <button onclick="displayanswer(1)" id="b1"><p>Show Answer</p></button><p id="a1"></p>
+            <li><strong>L F A I - </strong> getting a 5/10 or lower in the Spanish grading system
+                <button onclick="displayanswer(2)" id="b2"><p>Show Answer</p></button><p id="a2"></p>
+            <li><strong>Y I T N  - </strong> very small
+                <button onclick="displayanswer(3)" id="b3"><p>Show Answer</p></button><p id="a3"></p>
+            <li><strong>U O R E O S M N - </strong> really big
+                <button onclick="displayanswer(4)" id="b4"><p>Show Answer</p></button><p id="a4"></p>
+            <li><strong>B R U H I S B - </strong> the British word for "trash" or "waste"
+                <button onclick="displayanswer(5)" id="b5"><p>Show Answer</p></button><p id="a5"></p>
+            <li><strong>E A G V R - </strong> where you bury dead people
+                <button onclick="displayanswer(6)" id="b6"><p>Show Answer</p></button><p id="a6"></p>
+            <li><strong>E R T E S T - </strong> where you drive your car
+                <button onclick="displayanswer(7)" id="b7"><p>Show Answer</p></button><p id="a7"></p>
+            <li><strong>N N I U O A T M  - </strong> Everest, Fuji, Teide
+                <button onclick="displayanswer(8)" id="b8"><p>Show Answer</p></button><p id="a8"></p>
+            <li><strong>G L O N I T H C - </strong> shirt, pants, socks, sweater, jumpers
+                <button onclick="displayanswer(9)" id="b9"><p>Show Answer</p></button><p id="a9"></p>
+            <li><strong>S I R T I N V Y E U - </strong> what some people do after they finish high school
+                <button onclick="displayanswer(10)" id="b10"><p>Show Answer</p></button><p id="a10"></p>
+        </li>
+        </ol>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    // deals with the fact that they show up strangely the first time
+    // needs to be done twice, so the answers end up hidden
+    toggleAll();
+    toggleAll();
+</script>
+ 
+
+
+  <style>
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+</style>
+<div class="footer">
+  <p>Last updated 2023-04-17</p>
+</div>
+
+</body>
+</html>
