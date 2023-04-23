@@ -1,0 +1,69 @@
+{% extends "_base.html" %}
+
+
+{% block head_content %}
+<title>Unscramble 4</title>
+
+<script type="text/javascript"> 
+    const answers = [
+        'RELIABLE', 
+        'ENGAGE', 
+        'INSPIRE', 
+        'VERSATILE', 
+        'KEYS',
+        'COMPLIMENT',
+        'PLUMBERS',
+        'MOVIE',
+        'ACCENTS',
+        'CHEESE',
+
+    ];
+</script>
+<script type="text/javascript" src="answers.js"></script>
+{% endblock head_content %}
+
+{% block content %}
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 4</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
+            
+        <ol>
+            <li><strong>A E L R L E B I - </strong> just about always works
+                <button onclick="displayanswer(1)" id="b1"><p>Show Answer</p></button><p id="a1"></p>
+            <li><strong>A G G E N E - </strong> to become involved with or participate in something
+                <button onclick="displayanswer(2)" id="b2"><p>Show Answer</p></button><p id="a2"></p>
+            <li><strong>E P R I S N I  - </strong> to motivate someone to do something creative
+                <button onclick="displayanswer(3)" id="b3"><p>Show Answer</p></button><p id="a3"></p>
+            <li><strong>E E L V I A T R S - </strong> capable of doing many things
+                <button onclick="displayanswer(4)" id="b4"><p>Show Answer</p></button><p id="a4"></p>
+            <li><strong>S E Y K - </strong> need these to get into your house
+                <button onclick="displayanswer(5)" id="b5"><p>Show Answer</p></button><p id="a5"></p>
+            <li><strong>E L C M I M N P O T - </strong> when you say something nice about someone
+                <button onclick="displayanswer(6)" id="b6"><p>Show Answer</p></button><p id="a6"></p>
+            <li><strong>U M E L R B P S - </strong> Mario and Luigi are...
+                <button onclick="displayanswer(7)" id="b7"><p>Show Answer</p></button><p id="a7"></p>
+            <li><strong>M V I E O  - </strong> American word for "film"
+                <button onclick="displayanswer(8)" id="b8"><p>Show Answer</p></button><p id="a8"></p>
+            <li><strong>C T N E A S C - </strong> we sound different because we have different...
+                <button onclick="displayanswer(9)" id="b9"><p>Show Answer</p></button><p id="a9"></p>
+            <li><strong>E S E C E H - </strong> tasty old milk
+                <button onclick="displayanswer(10)" id="b10"><p>Show Answer</p></button><p id="a10"></p>
+        </li>
+        </ol>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    // deals with the fact that they show up strangely the first time
+    // needs to be done twice, so the answers end up hidden
+    toggleAll();
+    toggleAll();
+</script>
+{% endblock content %}
