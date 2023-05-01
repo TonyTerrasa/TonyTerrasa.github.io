@@ -1,0 +1,184 @@
+{% extends "_base.html" %}
+
+{% block head_content %}
+
+  <title>7 Little Words 2</title>
+
+  <script>
+    const answers = [
+        'DUTCH', 
+        'ALPHABET', 
+        'MICROPHONE', 
+        'LUGGAGE', 
+        'CURTAIN',
+        'ALCOHOL',
+        'AJAR',
+    ];
+    function revealAnswer(questionNumber){
+        var questionID = "q".concat(questionNumber);
+
+        // grey out the parts of the table with the answer
+        const collection = document.getElementsByClassName(questionID);
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].style.backgroundColor = "grey";
+        }
+
+        // display the answer next to the question
+        answerElement = document.getElementById(questionID);
+        answerElement.innerHTML = answers[questionNumber-1];
+        answerElement.style.cssText = "text-decoration: underline;";
+    }
+  </script>
+  <style type="text/css">
+
+  .tg  {
+      margin: auto; /* or margin: 0 auto 0 auto */
+      border-spacing:0;
+      width: 100%;
+      border: solid black 1px;
+      border-radius: 4px;
+      vertical-align:middle;
+  }
+  .tg td{
+      border: black solid 0.5px;
+      font-family:Arial, sans-serif;
+      font-size:14px;
+      padding:10px 5px;
+  }
+
+  .tg .tg-0lax{
+      text-align:center;
+      vertical-align:middle;
+      background-color:#3865e0;
+      color:#FFFFFF;
+    
+  }
+
+
+    body {
+      font-family: Arial;
+      padding: 10px;
+      background: #f1f1f1;
+    }
+
+    h1 {
+      font-family: Arial;
+      text-align:center;
+      padding: 10px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+      background-color: white;
+      overflow: auto;
+    }
+    .row {
+      width:100%;
+      float:left;
+    }
+    .left {
+      padding: 20px;
+      margin: auto;
+      float: left;
+      width: 30%;
+    }
+    .right {
+      padding: 20px;
+      margin: auto;
+      float: left;
+      width: 50%;
+    }
+    @media screen and (max-width: 800px) {
+      .left, .main, .right {
+        width: 90%;
+      }
+
+    }
+    .tag {
+      color:grey;
+      font-style:italic;
+      font-size: 10px;
+
+      display:block;
+      margin-right: 10px;
+      text-align: right;
+    }
+
+    .answer {
+      font-weight: bold;
+    }
+  </style>
+{% endblock head_content %}
+
+{% block content %}
+
+  <div class="card">
+    <h1>7 Little Words #2</h1>
+    <div class="row">
+      <div class="left">
+        <table class="tg">
+          <tbody>
+            <tr>
+              <td class="tg-0lax q5">CUR</td>
+              <td class="tg-0lax q2">AL</td>
+              <td class="tg-0lax q6">ALC</td>
+              <td class="tg-0lax q2">PHA</td>
+              <td class="tg-0lax q1">TCH</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax q4">GE</td>
+              <td class="tg-0lax q3">ONE</td>
+              <td class="tg-0lax q3">MIC</td>
+              <td class="tg-0lax q2">BET</td>
+              <td class="tg-0lax q3">RO</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax q4">GA</td>
+              <td class="tg-0lax q6">OH</td>
+              <td class="tg-0lax q7">AR</td>
+              <td class="tg-0lax q6">OL</td>
+              <td class="tg-0lax q5">TA</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax q4">LUG</td>
+              <td class="tg-0lax q3">PH</td>
+              <td class="tg-0lax q5">IN</td>
+              <td class="tg-0lax q7">AJ</td>
+              <td class="tg-0lax q1">DU</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="right">
+        <ol>
+          <li><button onclick="revealAnswer(1)">Show
+          Answer</button> The language spoken in the Netherlands (5
+          letters) <span class="answer" id="q1">__________</span></li>
+          <li><button onclick="revealAnswer(2)">Show
+          Answer</button> A, B, C, D, E, F, ... (8 letters) <span class="answer" id=
+          "q2">__________</span></li>
+          <li><button onclick="revealAnswer(3)">Show
+          Answer</button> Captures Sound (10
+          letters) <span class="answer" id="q3">__________</span></li>
+          <li><button onclick="revealAnswer(4)">Show
+          Answer</button> Where you store things for vacation (7 letters) <span class="answer" id=
+          "q4">__________</span></li>
+          <li><button onclick="revealAnswer(5)">Show
+          Answer</button> For covering windows  (7
+          letters) <span class="answer" id="q5">__________</span></li>
+          <li><button onclick="revealAnswer(6)">Show
+          Answer</button> "Social lubricant"  (7 letters) <span class="answer" id=
+          "q6">__________</span></li>
+          <li><button onclick="revealAnswer(7)">Show
+          Answer</button> Slightly open (4 letters) <span class="answer" id=
+          "q7">__________</span></li>
+        </ol>
+      </div>
+    </div>
+    <p class="tag">7 Little Words for ESL Use: Exercise 2</p>
+    <p class="tag">Author: Tony Terrasa</p>
+  </div>
+
+
+{% endblock content %}
+
