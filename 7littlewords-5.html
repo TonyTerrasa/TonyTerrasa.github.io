@@ -5,17 +5,17 @@
   "HTML Tidy for HTML5 for Linux version 5.7.45">
   
 
-  <title>7 Little Words 3</title>
+  <title>7 Little Words 5</title>
 
   <script>
     const answers = [
-        'NOTEBOOK', 
-        'ISLAM', 
-        'EVEN', 
-        'GLASSES', 
-        'AFTERNOON',
-        'ASSESS',
-        'AVID',
+        'TRUNK',
+        'SUNSHINE',
+        'DUSK',
+        'GRASS',
+        'BUSH', 
+        'SERENE', 
+        'TWIG', 
     ];
     function revealAnswer(questionNumber){
         var questionID = "q".concat(questionNumber);
@@ -31,8 +31,15 @@
         answerElement.innerHTML = answers[questionNumber-1];
         answerElement.style.cssText = "text-decoration: underline;";
     }
+    function fillLetters(){
+        for(let i=0;i<answers.length;i++){
+            var lettersID = "letters".concat(i+1);
+            lettersElemente = document.getElementById(lettersID);
+            lettersElemente.innerHTML = answers[i].length;
+        }
+    }
   </script>
-  <style type="text/css">
+<style type="text/css">
 
   .tg  {
       margin: auto; /* or margin: 0 auto 0 auto */
@@ -130,38 +137,34 @@
   
 
   <div class="card">
-    <h1>7 Little Words #3</h1>
+    <h1>7 Little Words #5</h1>
     <div class="row">
       <div class="left">
         <table class="tg">
           <tbody>
             <tr>
-              <td class="tg-0lax q6">AS</td>
+              <td class="tg-0lax q7">IG</td>
+              <td class="tg-0lax q1">UNK</td>
+              <td class="tg-0lax q2">NSH</td>
+              <td class="tg-0lax q5">BU</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax q6">NE</td>
+              <td class="tg-0lax q3">SK</td>
               <td class="tg-0lax q4">SS</td>
-              <td class="tg-0lax q1">OK</td>
-              <td class="tg-0lax q2">IS</td>
-              <td class="tg-0lax q7">AV</td>
+              <td class="tg-0lax q1">TR</td>
             </tr>
             <tr>
-              <td class="tg-0lax q6">S</td>
-              <td class="tg-0lax q3">EN</td>
-              <td class="tg-0lax q5">NO</td>
-              <td class="tg-0lax q4">GLA</td>
-              <td class="tg-0lax q1">NOT</td>
+              <td class="tg-0lax q5">SH</td>
+              <td class="tg-0lax q6">SE</td>
+              <td class="tg-0lax q2">SU</td>
+              <td class="tg-0lax q3">DU</td>
             </tr>
             <tr>
-              <td class="tg-0lax q5">ER</td>
-              <td class="tg-0lax q2">LAM</td>
-              <td class="tg-0lax q7">ID</td>
-              <td class="tg-0lax q5">ON</td>
-              <td class="tg-0lax q5">FUL</td>
-            </tr>
-            <tr>
-              <td class="tg-0lax q4">ES</td>
-              <td class="tg-0lax q6">ESS</td>
-              <td class="tg-0lax q1">EBO</td>
-              <td class="tg-0lax q3">EV</td>
-              <td class="tg-0lax q5">AFT</td>
+              <td class="tg-0lax q4">GRA</td>
+              <td class="tg-0lax q2">INE</td>
+              <td class="tg-0lax q7">TW</td>
+              <td class="tg-0lax q6">RE</td>
             </tr>
           </tbody>
         </table>
@@ -169,24 +172,27 @@
       <div class="right">
         <ol>
           <li><button onclick="revealAnswer(1)"> Answer</button> 
-              Where you write your class assignments (8 letters) <span class="answer" id="q1">__________</span></li>
+              The thick part at the bottom of a tree (<span id="letters1"></span> letters) <span class="answer" id="q1">__________</span></li>
           <li><button onclick="revealAnswer(2)"> Answer</button> 
-              Abrahamic Religions include: Christianity, Judaisim, and ... (5 letters) <span class="answer" id="q2">__________</span></li>
+              The light of the sun, usually without any clouds (<span id="letters2"></span> letters) <span class="answer" id="q2">__________</span></li>
           <li><button onclick="revealAnswer(3)"> Answer</button> 
-              2, 4, 6, 8, 10, ..., 202 (4 letters) <span class="answer" id="q3">__________</span></li>
+              When the sun has set, but you can still see some of the light in the sky (<span id="letters3"></span> letters) <span class="answer" id="q3">__________</span></li>
           <li><button onclick="revealAnswer(4)"> Answer</button> 
-              Helps you see if you can't (7 letters) <span class="answer" id="q4">__________</span></li>
+              A small plant that cover yards, soccer fields, and countrysides (<span id="letters4"></span> letters) <span class="answer" id="q4">__________</span></li>
           <li><button onclick="revealAnswer(5)"> Answer</button> 
-              After morning and before evening (9 letters) <span class="answer" id="q5">__________</span></li>
+              Like a tree but smaller and sometimes wider. They somtimes have flowers (<span id="letters5"></span> letters) <span class="answer" id="q5">__________</span></li>
           <li><button onclick="revealAnswer(6)"> Answer</button> 
-              Evaluate or estimate the nature, ability, or quality of. (6 letters) <span class="answer" id="q6">__________</span></li>
+              Calm, peaceful, tranquil, without trouble (<span id="letters6"></span> letters) <span class="answer" id="q6">__________</span></li>
           <li><button onclick="revealAnswer(7)"> Answer</button> 
-              Having strong interest or desire (4 letters) <span class="answer" id="q7">__________</span></li>
+              A small branch or piece of wood (<span id="letters7"></span> letters) <span class="answer" id="q7">__________</span></li>
         </ol>
       </div>
     </div>
-    <p class="tag">7 Little Words for ESL Use: Exercise 3</p>
+    <p class="tag">7 Little Words for ESL Use: Exercise 5</p>
     <p class="tag">Author: Tony Terrasa</p>
+    <script>
+        fillLetters(); 
+    </script>
   </div>
 
 
@@ -203,7 +209,7 @@
 }
 </style>
 <div class="footer">
-  <p>Last updated 2023-05-05</p>
+  <p>Last updated 2023-05-06</p>
 </div>
 
 </body>

@@ -1,0 +1,148 @@
+{% extends "_base.html" %}
+
+
+{% block head_content %}
+<title>Unscramble 6</title>
+
+<script type="text/javascript"> 
+    const answers = [
+        'C H E W', 
+        'O F T E N', 
+        'C H E S S', 
+        'Z I G Z A G', 
+        'G H O S T',
+        'C L O S E T',
+        'C A B I N E T',
+        'P U R S E',
+        'W H I S P E R',
+        'C H R I S T I A N I T Y',
+    ];
+    const scrambled = [
+        'C E H W', 
+        'N F O T E', 
+        'H S E S C', 
+        'G G A I Z Z', 
+        'T O H S G',
+        'S L T C O E',
+        'B A I C T E N',
+        'R E S P U',
+        'H E S P W R I',
+        'R I T T C H N Y A I S I',
+    ];
+    const definitions = [
+        "To crush your food with your teeth", 
+        "Never, Sometimes,  ______, Always", 
+        "A game with pieces like the king, queen, pawn, rook, bishop", 
+        "To move side to side very fast", 
+        "The spirit of a dead person amongst the living",
+        "Where you keep things like clothes and videogames",
+        "Where you keep food in the kitchen (NOT cold)",
+        "A bag, usually word by women, for carring things during the day",
+        "To speak very softly without making your throat vibrate",
+        "The religion to which Christians belong",
+    ];
+
+    function toggleAnswer(question, value){ 
+        var wordID = "w" + question;
+        wordElement = document.getElementById(wordID);
+
+        if(value == undefined){
+            // check if the current text is in the 
+            if (scrambled.includes(wordElement.innerHTML)){
+                value = 'show';
+            }
+            else {
+                value = 'hide';
+            }
+        }
+        console.log(value);
+
+        // toggle off/on
+        if(value == 'show'){
+            wordElement.innerHTML = answers[question-1];
+            wordElement.style.color = "green";
+        }
+        else if(value == 'hide'){
+            wordElement.innerHTML = scrambled[question-1];
+            wordElement.style.color = "black";
+        }
+        else {
+            console.log("invalid value given for toggling: " + value);
+        }
+    }
+
+    function toggleAll(){
+        if(document.getElementById('toggle').innerHTML.includes('Show All')){
+            document.getElementById('toggle').innerHTML = 'Hide All';
+            value = 'show';
+        }
+        else{
+            document.getElementById('toggle').innerHTML = 'Show All';
+            value = 'hide';
+        }
+
+        // toggle all
+        for(i = 1; i <= answers.length; i++){
+            toggleAnswer(i, value);
+        }
+    }
+
+    function fill(){
+        for (let i=0; i < definitions.length; i++){
+            defID = "def".concat(i+1);
+            wordID = "w".concat(i+1);
+            document.getElementById(defID).innerHTML = definitions[i];
+            document.getElementById(wordID).innerHTML = scrambled[i];
+        }
+    }
+
+</script>
+
+<style>
+    table{
+        width:90%;
+        border-spacing: 0 3px;
+
+    }
+    .word {
+        font-weight: bold;
+    }
+</style>
+{% endblock head_content %}
+
+{% block content %}
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 6</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
+            
+            <ol>
+                <li><span class="word" onclick="toggleAnswer(1)" id="w1"></span> - <span id="def1"></span>
+                <li><span class="word" onclick="toggleAnswer(2)" id="w2"></span> - <span id="def2"></span>
+                <li><span class="word" onclick="toggleAnswer(3)" id="w3"></span> - <span id="def3"></span>
+                <li><span class="word" onclick="toggleAnswer(4)" id="w4"></span> - <span id="def4"></span>
+                <li><span class="word" onclick="toggleAnswer(5)" id="w5"></span> - <span id="def5"></span>
+                <li><span class="word" onclick="toggleAnswer(6)" id="w6"></span> - <span id="def6"></span>
+                <li><span class="word" onclick="toggleAnswer(7)" id="w7"></span> - <span id="def7"></span>
+                <li><span class="word" onclick="toggleAnswer(8)" id="w8"></span> - <span id="def8"></span>
+                <li><span class="word" onclick="toggleAnswer(9)" id="w9"></span> - <span id="def9"></span>
+                <li><span class="word" onclick="toggleAnswer(10)" id="w10"></span> - <span id="def10"></span>
+            </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    // deals with the fact that they show up strangely the first time
+    // needs to be done twice, so the answers end up hidden
+    toggleAll();
+    toggleAll();
+
+    // initiallized the document with the scrambled and the definitions 
+    fill();
+</script>
+{% endblock content %}
