@@ -34,5 +34,9 @@ if __name__ == "__main__":
             if filename[0] == "_":
                 continue
 
+            # don't render css files
+            if filename[-3:] == "css":
+                continue
+
             if render_files == "all" or filename in render_files:
                 render(filename)
