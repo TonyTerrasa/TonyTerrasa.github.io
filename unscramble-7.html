@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.7.45">
+  
+<title>Unscramble 7</title>
+
+<script type="text/javascript"> 
+    const answers = [
+        'P I A N O', 
+        'H I T',
+        'H E A D P H O N E S', 
+        'S T R E A M I N G', 
+        'R A P P E R', 
+        'P R O D U C E R',
+        'S P E A K E R',
+        'G E N R E',
+        'P L A Y L I S T',
+        'A L B U M',
+    ];
+    const scrambled = [
+        'O A P N I', 
+        'I H T',
+        'O H E A P H N D E S', 
+        'S T M N I G R A E', 
+        'R R A P P E', 
+        'P U O E R C D R',
+        'E S A K P R E',
+        'G R E E N',
+        'I A P L T Y L S',
+        'B A L U M',
+    ];
+    const definitions = [
+        "a musical instrument you play by touching black and white keys", 
+        "a song that in its time is very populaa song that in its time is very popular",
+        "use these to listen to music so no one else can hear", 
+        "Netflix, Spotify, Apple Music, HBO Max, for example", 
+        "Bad Bunny, Kendrick Lamar, Karol G, Residente, Young Miko, for example", 
+        "the person who makes the beat or background music for the rapper",
+        "use this to listen to music if you want everyone to hear",
+        "the word for a type of music",
+        "a collection of songs you listen to together, not necessarily from the same artist",
+        "a collection of songs  by the same artist and released at the same time which you listen to together",
+    ];
+
+    function toggleAnswer(question, value){ 
+        var wordID = "w" + question;
+        wordElement = document.getElementById(wordID);
+
+        if(value == undefined){
+            // check if the current text is in the 
+            if (scrambled.includes(wordElement.innerHTML)){
+                value = 'show';
+            }
+            else {
+                value = 'hide';
+            }
+        }
+        console.log(value);
+
+        // toggle off/on
+        if(value == 'show'){
+            wordElement.innerHTML = answers[question-1];
+            wordElement.style.color = "green";
+        }
+        else if(value == 'hide'){
+            wordElement.innerHTML = scrambled[question-1];
+            wordElement.style.color = "black";
+        }
+        else {
+            console.log("invalid value given for toggling: " + value);
+        }
+    }
+
+    function toggleAll(){
+        if(document.getElementById('toggle').innerHTML.includes('Show All')){
+            document.getElementById('toggle').innerHTML = 'Hide All';
+            value = 'show';
+        }
+        else{
+            document.getElementById('toggle').innerHTML = 'Show All';
+            value = 'hide';
+        }
+
+        // toggle all
+        for(i = 1; i <= answers.length; i++){
+            toggleAnswer(i, value);
+        }
+    }
+
+    function fill(){
+        for (let i=0; i < definitions.length; i++){
+            defID = "def".concat(i+1);
+            wordID = "w".concat(i+1);
+            document.getElementById(defID).innerHTML = definitions[i];
+            document.getElementById(wordID).innerHTML = scrambled[i];
+        }
+    }
+
+</script>
+
+<style>
+    table{
+        width:90%;
+        border-spacing: 0 3px;
+
+    }
+    .word {
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 20px;
+    }
+</style>
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <div class="header">
+    <h1><a href="./index.html">TJ Teaches</a></h1>
+</div>
+
+<div class="topnav">
+    <a href="./index.html">Home</a>
+    <a href="./games.html">Games</a>
+    <a href="./reviews.html">Grammar Reviews</a>
+</div> 
+
+  
+
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>Unscramble 7</h2>
+            <p>Unscamble these words to match the definitions.</p>
+            <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
+            
+            <ol>
+                <li><span class="word" onclick="toggleAnswer(1)" id="w1"></span> - <span id="def1"></span>
+                <li><span class="word" onclick="toggleAnswer(2)" id="w2"></span> - <span id="def2"></span>
+                <li><span class="word" onclick="toggleAnswer(3)" id="w3"></span> - <span id="def3"></span>
+                <li><span class="word" onclick="toggleAnswer(4)" id="w4"></span> - <span id="def4"></span>
+                <li><span class="word" onclick="toggleAnswer(5)" id="w5"></span> - <span id="def5"></span>
+                <li><span class="word" onclick="toggleAnswer(6)" id="w6"></span> - <span id="def6"></span>
+                <li><span class="word" onclick="toggleAnswer(7)" id="w7"></span> - <span id="def7"></span>
+                <li><span class="word" onclick="toggleAnswer(8)" id="w8"></span> - <span id="def8"></span>
+                <li><span class="word" onclick="toggleAnswer(9)" id="w9"></span> - <span id="def9"></span>
+                <li><span class="word" onclick="toggleAnswer(10)" id="w10"></span> - <span id="def10"></span>
+            </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"> 
+    // deals with the fact that they show up strangely the first time
+    // needs to be done twice, so the answers end up hidden
+    toggleAll();
+    toggleAll();
+
+    // initiallized the document with the scrambled and the definitions 
+    fill();
+</script>
+ 
+
+
+  <style>
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="footer.css">
+<div class="footer">
+  <p>Last updated 2023-05-16</p>
+   <!-- Add font awesome icons -->
+   <a href="https://github.com/TonyTerrasa" class="fa fa-github"></a>
+   <a href="https://www.youtube.com/channel/UCQy42mG3Hgzce6KePlKnmXg" class="fa fa-youtube"></a>
+   <a href="https://www.linkedin.com/in/tony-terrasa/" class="fa fa-linkedin"></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+{% extends "_base.html" %}
+
+{% block head_content %}
+
+  <title>7 Little Words 7</title>
+
+  <script>
+    const answers = [
+        'LAPTOP',
+        'TILING',
+        'LAMP',
+        'BALCONY',
+        'FRAME', 
+        'KNOB', 
+        'HANGER', 
+    ];
+    const hints = [
+        'portable computer like a macbook or a chromebook',
+        'the type flooring in the bathroom and the kitchen',
+        'a type of light which stands on its own',
+        'the part of your apartment which hangs outside',
+        'pieces of wood that hold the door into the wall', 
+        'the part of the door that you grab and twist', 
+        'twisted wire that you hand your clothes on in the closet', 
+    ];
+    const fragments = {
+        1: ['LAP', 'T', 'OP'], 
+        2: ['TI', 'LI', 'NG'],
+        3: ['LA', 'MP'],
+        4: ['BA', 'LC', 'ON', 'Y'],
+        5: ['FR', 'AM', 'E'],
+        6: ['KN', 'OB'],
+        7: ['HA', 'NG', 'ER'],
+    };
+    function revealAnswer(questionNumber){
+        var questionID = "q".concat(questionNumber);
+
+        // grey out the parts of the table with the answer
+        const collection = document.getElementsByClassName(questionID);
+        for (let i = 0; i < collection.length; i++) {
+          collection[i].style.backgroundColor = "grey";
+        }
+
+        // display the answer next to the question
+        answerElement = document.getElementById(questionID);
+        answerElement.innerHTML = answers[questionNumber-1];
+        answerElement.style.cssText = "text-decoration: underline;";
+    }
+    function shuffleArray(array) {
+       for (var i = array.length - 1; i > 0; i--) { 
+      
+           // Generate random number 
+           var j = Math.floor(Math.random() * (i + 1));
+                      
+           var temp = array[i];
+           array[i] = array[j];
+           array[j] = temp;
+       }
+          
+       return array;
+    }
+    function init(){
+        for(let i=0;i<answers.length;i++){
+            // populate the letter length
+            var lettersID = "letters".concat(i+1);
+            lettersElement = document.getElementById(lettersID);
+            lettersElement.innerHTML = answers[i].length;
+            
+            // populate the hints
+            var hintID = "hint".concat(i+1);
+            hintElement = document.getElementById(hintID);
+            hintElement.innerHTML = hints[i];
+        }
+
+        // place the fragments
+        var frags = [];
+        for (const num in fragments) {
+            for (let i = 0; i < fragments[num].length; i++) {
+                frags.push([num, fragments[num][i]]);
+            }
+        }
+        frags = shuffleArray(frags);
+        for (let i = 0; i < frags.length; i++) {
+
+            let qNum = frags[i][0];
+            let f = frags[i][1];
+
+            let fragID = "frag".concat(i+1);
+            let qClass = "q".concat(qNum);
+
+            let fragElement = document.getElementById(fragID);
+            fragElement.innerHTML = f;
+            fragElement.classList.add(qClass);
+        }
+
+        for (let i = 1; i <= answers.length; i++){
+            var questionID = "q".concat(i);
+            answerElement = document.getElementById(questionID);
+            answerElement.innerHTML = "_".repeat(answers[i-1].length);
+        }
+
+    }
+  </script>
+<style type="text/css">
+
+    .answer{
+        font-family: monospace;
+        font-size: 15px;
+    }
+    
+    .tg  {
+        margin: auto; /* or margin: 0 auto 0 auto */
+        border-spacing:0;
+        width: 100%;
+        border: solid black 1px;
+        border-radius: 4px;
+        vertical-align:middle;
+    }
+    .tg td{
+        border: black solid 0.5px;
+        font-family:Arial, sans-serif;
+        font-size:14px;
+        padding:10px 5px;
+    }
+
+    .tg .tg-0lax{
+        text-align:center;
+        vertical-align:middle;
+        background-color:#3865e0;
+        color:#FFFFFF;
+     
+    }
+
+
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background: #f1f1f1;
+    }
+
+    h1 {
+        font-family: Arial;
+        text-align:center;
+        padding: 10px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+        background-color: white;
+        overflow: auto;
+    }
+    .row {
+        width:100%;
+        float:left;
+    }
+    .left {
+        padding: 20px;
+        margin: auto;
+        float: left;
+        width: 30%;
+    }
+    .right {
+        padding: 20px;
+        margin: auto;
+        float: left;
+        width: 50%;
+    }
+    @media screen and (max-width: 800px) {
+        .left, .main, .right {
+            width: 90%;
+        }
+
+    }
+    .tag {
+        color:grey;
+        font-style:italic;
+        font-size: 10px;
+
+        display:block;
+        margin-right: 10px;
+        text-align: right;
+    }
+
+    .answer {
+        font-weight: bold;
+    }
+</style>
+{% endblock head_content %}
+
+{% block content %}
+
+  <div class="card">
+    <h1>7 Little Words #6</h1>
+    <div class="row">
+      <div class="left">
+        <table class="tg">
+          <tbody>
+            <tr>
+              <td id="frag1" class="tg-0lax"></td>
+              <td id="frag2" class="tg-0lax"></td>
+              <td id="frag3" class="tg-0lax"></td>
+              <td id="frag4" class="tg-0lax"></td>
+              <td id="frag5" class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td id="frag6" class="tg-0lax"></td>
+              <td id="frag7" class="tg-0lax"></td>
+              <td id="frag8" class="tg-0lax"></td>
+              <td id="frag9" class="tg-0lax"></td>
+              <td id="frag10" class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td id="frag11" class="tg-0lax"></td>
+              <td id="frag12" class="tg-0lax"></td>
+              <td id="frag13" class="tg-0lax"></td>
+              <td id="frag14" class="tg-0lax"></td>
+              <td id="frag15" class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td id="frag16" class="tg-0lax"></td>
+              <td id="frag17" class="tg-0lax"></td>
+              <td id="frag18" class="tg-0lax"></td>
+              <td id="frag19" class="tg-0lax"></td>
+              <td id="frag20" class="tg-0lax"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="right">
+        <ol>
+          <li><button onclick="revealAnswer(1)"> Answer</button> 
+              <span id="hint1"></span> (<span id="letters1"></span> letters) <span class="answer" id="q1">__________</span></li>
+          <li><button onclick="revealAnswer(2)"> Answer</button> 
+              <span id="hint2"></span> (<span id="letters2"></span> letters) <span class="answer" id="q2">__________</span></li>
+          <li><button onclick="revealAnswer(3)"> Answer</button> 
+              <span id="hint3"></span> (<span id="letters3"></span> letters) <span class="answer" id="q3">__________</span></li>
+          <li><button onclick="revealAnswer(4)"> Answer</button> 
+              <span id="hint4"></span> (<span id="letters4"></span> letters) <span class="answer" id="q4">__________</span></li>
+          <li><button onclick="revealAnswer(5)"> Answer</button> 
+              <span id="hint5"></span> (<span id="letters5"></span> letters) <span class="answer" id="q5">__________</span></li>
+          <li><button onclick="revealAnswer(6)"> Answer</button> 
+              <span id="hint6"></span> (<span id="letters6"></span> letters) <span class="answer" id="q6">__________</span></li>
+          <li><button onclick="revealAnswer(7)"> Answer</button> 
+              <span id="hint7"></span> (<span id="letters7"></span> letters) <span class="answer" id="q7">__________</span></li>
+        </ol>
+      </div>
+    </div>
+    <p class="tag">7 Little Words for ESL Use: Exercise 7</p>
+    <p class="tag">Author: Tony Terrasa</p>
+    <script>
+        init(); 
+    </script>
+  </div>
+
+
+{% endblock content %}
+
