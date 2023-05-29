@@ -1,47 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="generator" content=
-  "HTML Tidy for HTML5 for Linux version 5.7.45">
-  
-<title>Unscramble 7</title>
+{% extends "_base.html" %}
+
+
+{% block head_content %}
+<title>Unscramble 8</title>
 
 <script type="text/javascript"> 
     const answers = [
-        'P I A N O', 
-        'H I T',
-        'H E A D P H O N E S', 
-        'S T R E A M I N G', 
-        'R A P P E R', 
-        'P R O D U C E R',
-        'S P E A K E R',
-        'G E N R E',
-        'P L A Y L I S T',
-        'A L B U M',
+        'C A F E', 
+        'L I V I N G',
+        'S O C C E R', 
+        'S Y L L A B L E', 
+        'S C R E E N', 
+        'A D V E R T I S E M E N T',
+        'M U M B L E',
+        'C O O L E R',
+        'C A P',
+        'S U N G L A S S E S',
     ];
     const scrambled = [
-        'O A P N I', 
-        'I H T',
-        'O H E A P H N D E S', 
-        'S T M N I G R A E', 
-        'R R A P P E', 
-        'P U O E R C D R',
-        'E S A K P R E',
-        'G R E E N',
-        'I A P L T Y L S',
-        'B A L U M',
+        'C E F A', 
+        'L G V N I I',
+        'E C S O R C', 
+        'Y B E L L L S A', 
+        'E R E C S N', 
+        'T E A I R V D M E N S E T',
+        'U E M L B M',
+        'E L C O O R',
+        'P C A',
+        'G U S S A L E S N S',
     ];
     const definitions = [
-        "a musical instrument you play by touching black and white keys", 
-        "a song that in its time is very populaa song that in its time is very popular",
-        "use these to listen to music so no one else can hear", 
-        "Netflix, Spotify, Apple Music, HBO Max, for example", 
-        "Bad Bunny, Kendrick Lamar, Karol G, Residente, Young Miko, for example", 
-        "the person who makes the beat or background music for the rapper",
-        "use this to listen to music if you want everyone to hear",
-        "the word for a type of music",
-        "a collection of songs you listen to together, not necessarily from the same artist",
-        "a collection of songs  by the same artist and released at the same time which you listen to together",
+        "where you drink coffee", 
+        "a place in your house where you hang out, maybe watch TV is the ___ room",
+        "American word for football", 
+        "each one of the parts of a word like te-le-por-ta-tion", 
+        "the part of your laptop that you look at", 
+        "what you see on YouTube before your video plays",
+        "when you speak without articulating well, making it difficult to understand",
+        "where you put the drinks when you go to the beach",
+        "what stops the coca-cola from coming out of the bottle when it's closed",
+        "what stops the sun from hurting your eyes",
     ];
 
     function toggleAnswer(question, value){ 
@@ -112,29 +110,14 @@
         font-size: 20px;
     }
 </style>
+{% endblock head_content %}
 
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-
-  <div class="header">
-    <h1><a href="./index.html">TJ Teaches</a></h1>
-</div>
-
-<div class="topnav">
-    <a href="./index.html">Home</a>
-    <a href="./games.html">Games</a>
-    <a href="./reviews.html">Grammar Reviews</a>
-</div> 
-
-  
+{% block content %}
 
 <div class="row">
     <div class="onecolumn">
         <div class="card">
-            <h2>Unscramble 7</h2>
+            <h2>Unscramble 8</h2>
             <p>Unscamble these words to match the definitions.</p>
             <button onclick="toggleAll()" id="toggle"><p>Show All</p></button>
             
@@ -164,21 +147,4 @@
     // initiallized the document with the scrambled and the definitions 
     fill();
 </script>
- 
-
-
-  <style>
-</style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="footer.css">
-<div class="footer">
-  <p>Last updated 2023-05-16</p>
-   <!-- Add font awesome icons -->
-   <a href="https://github.com/TonyTerrasa" class="fa fa-github"></a>
-   <a href="https://www.youtube.com/channel/UCQy42mG3Hgzce6KePlKnmXg" class="fa fa-youtube"></a>
-   <a href="https://www.linkedin.com/in/tony-terrasa/" class="fa fa-linkedin"></a>
-</div>
-
-</body>
-</html>
+{% endblock content %}

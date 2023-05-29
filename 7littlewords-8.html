@@ -1,36 +1,39 @@
-{% extends "_base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.7.45">
+  
 
-{% block head_content %}
-
-  <title>7 Little Words 7</title>
+  <title>7 Little Words 8</title>
 
   <script>
     const answers = [
-        'LAPTOP',
-        'TILING',
-        'LAMP',
-        'BALCONY',
-        'FRAME', 
-        'KNOB', 
-        'HANGER', 
+        'COMPASS',
+        'BACKBOARD',
+        'MAILBOX',
+        'HANDLE',
+        'STICKER', 
+        'BENCH', 
+        'BANK', 
     ];
     const hints = [
-        'portable computer like a macbook or a chromebook',
-        'the type flooring in the bathroom and the kitchen',
-        'a type of light which stands on its own',
-        'the part of your apartment which hangs outside',
-        'pieces of wood that hold the door into the wall', 
-        'the part of the door that you grab and twist', 
-        'twisted wire that you hand your clothes on in the closet', 
+        'a device you use to know which direction is North',
+        'the big piece of glass behind the rim of a basketball basket',
+        'where the mailperson puts the mail for you to pick up',
+        'a piece of metal (like a stick) that you push down to open the a door',
+        'a piece of paper with something sticky on the back so you can put it on things like a waterbottle, etc',  
+        'a type of seat, often in a park', 
+        'where you keep your money', 
     ];
     const fragments = {
-        1: ['LAP', 'T', 'OP'], 
-        2: ['TI', 'LI', 'NG'],
-        3: ['LA', 'MP'],
-        4: ['BA', 'LC', 'ON', 'Y'],
-        5: ['FR', 'AM', 'E'],
-        6: ['KN', 'OB'],
-        7: ['HA', 'NG', 'ER'],
+        1: ['CO', 'MPA', 'SS'], 
+        2: ['BA', 'CK', 'BO', 'ARD'],
+        3: ['MA', 'ILB', 'OX'],
+        4: ['HA', 'ND', 'LE'],
+        5: ['STI', 'CK', 'ER'],
+        6: ['BE', 'NCH'],
+        7: ['BA', 'NK'],
     };
     function revealAnswer(questionNumber){
         var questionID = "q".concat(questionNumber);
@@ -185,12 +188,27 @@
         font-weight: bold;
     }
 </style>
-{% endblock head_content %}
 
-{% block content %}
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <div class="header">
+    <h1><a href="./index.html">TJ Teaches</a></h1>
+</div>
+
+<div class="topnav">
+    <a href="./index.html">Home</a>
+    <a href="./games.html">Games</a>
+    <a href="./reviews.html">Grammar Reviews</a>
+</div> 
+
+  
 
   <div class="card">
-    <h1>7 Little Words #7</h1>
+    <h1>7 Little Words #8</h1>
     <div class="row">
       <div class="left">
         <table class="tg">
@@ -253,5 +271,21 @@
   </div>
 
 
-{% endblock content %}
+ 
 
+
+  <style>
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="footer.css">
+<div class="footer">
+  <p>Last updated 2023-05-29</p>
+   <!-- Add font awesome icons -->
+   <a href="https://github.com/TonyTerrasa" class="fa fa-github"></a>
+   <a href="https://www.youtube.com/channel/UCQy42mG3Hgzce6KePlKnmXg" class="fa fa-youtube"></a>
+   <a href="https://www.linkedin.com/in/tony-terrasa/" class="fa fa-linkedin"></a>
+</div>
+
+</body>
+</html>
