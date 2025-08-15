@@ -1,0 +1,870 @@
+{% extends "_base.html" %}
+{% block head_content %}
+  <title>Home</title>
+{% endblock head_content %}
+
+{% block content %}
+<div class="row">
+    <div class="onecolumn">
+        <div class="card">
+            <h2>California</h2>
+            <h3>Stanford Conference</h3>
+            <p> I started with a conference... </p>
+            <div class="carousel" data-carousel="stanford">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in stanford %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in stanford %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>Visiting Grayson</h3>
+            <p> The conference wrapped up and I went to visit my friend Grayson.  </p>
+            <div class="carousel" data-carousel="graysonvisit">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in graysonvisit %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in graysonvisit %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Australia</h2>
+            <h3>The Journey</h3>
+            <p> When I made it to Sydney... </p>
+            <div class="carousel" data-carousel="arrivinginsydney">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in arrivinginsydney %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in arrivinginsydney %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        
+            <h3>Boat Tour</h3>
+            <p> When wew got out there... </p>
+            <div class="carousel" data-carousel="boattour">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in boattour  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in boattour  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>Whitehaven Beach and Diving!</h3>
+            <p> A few things here...</p>
+            <div class="carousel" data-carousel="whitehavenanddiving">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in whitehavenanddiving  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in whitehavenanddiving  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+            <h3>Melbourne</h3>
+            <p> A few things here...</p>
+            <div class="carousel" data-carousel="melbourne">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in melbourne  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in melbourne  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <h3>Great Ocean Road</h3>
+            <p> A few things here...</p>
+            <div class="carousel" data-carousel="gorday1">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in gorday1  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in gorday1  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <p> A few things here...</p>
+
+            <div class="carousel" data-carousel="gorday2">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in gorday2  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in gorday2  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+            <h3>Tasmania</h3>
+            <p> A few things here...</p>
+            <div class="carousel" data-carousel="hobart">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in hobart  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in hobart  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="carousel" data-carousel="brunyislandcruises">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in brunyislandcruises  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in brunyislandcruises  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <h3>Sydney</h3>
+            <p> A few things here...</p>
+            <div class="carousel" data-carousel="sydney">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in sydney  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in sydney  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+        <div class="card">
+            <h3>Singapore</h3>
+            <p> I got into Singapore...</p>
+            <div class="carousel" data-carousel="arrivinginsingapore">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in arrivinginsingapore  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in arrivinginsingapore  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+    
+
+            <p> My first day I went to the ...</p>
+            <div class="carousel" data-carousel="muslimquarter">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in muslimquarter  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in muslimquarter  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> Then I went to Chinatown...</p>
+            <div class="carousel" data-carousel="chinatown">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in chinatown  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in chinatown  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <p> in the evening..</p>
+            <div class="carousel" data-carousel="singapored1evening">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in singapored1evening  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in singapored1evening  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> In the morning, I was planning on ..</p>
+            <div class="carousel" data-carousel="rainymorning">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in rainymorning  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in rainymorning  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> Later that day ..</p>
+            <div class="carousel" data-carousel="peranakan">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in peranakan  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in peranakan  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> It was my last day  ..</p>
+            <div class="carousel" data-carousel="singaporeday3">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in singaporeday3  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in singaporeday3  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> And finally, it was time for me to get ready to leave  ..</p>
+            <div class="carousel" data-carousel="singaporelastnight">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in singaporelastnight  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in singaporelastnight  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            
+                        
+            <h3>Hong Kong</h3>
+
+            <p> And thus the last leg of my journey commencesd  ..</p>
+            <div class="carousel" data-carousel="hkarrival">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in hkarrival  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in hkarrival  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> I began the day  ..</p>
+            <div class="carousel" data-carousel="hkday1">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in hkday1  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in hkday1  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+        
+
+
+            <p> The following day  ..</p>
+            <div class="carousel" data-carousel="bigbuddhataio">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in bigbuddhataio  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in bigbuddhataio  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> Hike time ..</p>
+            <div class="carousel" data-carousel="dragonsback">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in dragonsback  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in dragonsback  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <p> The Dark Side ..</p>
+            <div class="carousel" data-carousel="kowloon">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in kowloon  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in kowloon  %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+
+            <h3>Time to Go Home</h3>
+
+            <p> Departure ..</p>
+            <div class="carousel" data-carousel="leavinghk">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in leavinghk  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in leavinghk %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <h3>Seoul</h3>
+
+            <p> One last Trip..</p>
+            <div class="carousel" data-carousel="seoul">
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        {% for media in seoul  %}
+                        <div class="carousel-slide">
+                            {% if media.type == 'video' %}
+                            <video controls muted>
+                                <source src="{{ media.path }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            {% else %}
+                            <img src="{{ media.path }}" alt="{{ media.alt }}">
+                            {% endif %}
+                            <div class="caption">{{ media.caption }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev">‹</button>
+                <button class="carousel-nav carousel-next">›</button>
+                <div class="carousel-dots">
+                    {% for media in seoul %}
+                    <button class="carousel-dot{% if loop.first %} active{% endif %}"></button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <h3>Conclusion</h3>
+
+             <img src="media/summer2025/flights.jpg" alt="All the flights for the summer" width="90%"> 
+        </div>
+</div>
+
+<script>
+    class Carousel {
+        constructor(element) {
+            this.carousel = element;
+            this.slides = element.querySelector('.carousel-slides');
+            this.slideElements = element.querySelectorAll('.carousel-slide');
+            this.prevBtn = element.querySelector('.carousel-prev');
+            this.nextBtn = element.querySelector('.carousel-next');
+            this.dots = element.querySelectorAll('.carousel-dot');
+            
+            this.currentSlide = 0;
+            this.totalSlides = this.slideElements.length;
+            
+            this.init();
+        }
+        
+        init() {
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+            
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goToSlide(index));
+            });
+            
+            this.updateCarousel();
+        }
+        
+        nextSlide() {
+            this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+            this.updateCarousel();
+        }
+        
+        prevSlide() {
+            this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+            this.updateCarousel();
+        }
+        
+        goToSlide(index) {
+            this.currentSlide = index;
+            this.updateCarousel();
+        }
+        
+        updateCarousel() {
+            const translateX = -this.currentSlide * 100;
+            this.slides.style.transform = `translateX(${translateX}%)`;
+            
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentSlide);
+            });
+        }
+    }
+    
+    // Initialize all carousels
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => new Carousel(carousel));
+    });
+</script>
+
+{% endblock content %}
